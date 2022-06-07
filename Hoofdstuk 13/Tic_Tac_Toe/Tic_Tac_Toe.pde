@@ -33,7 +33,7 @@ void setup(){
     int tellie  = 0;
      for(int i = 0; i < 3; i++){
        for(int j = 0; j < 3; j++){
-         knop[tellie] = cp.addButton("Knoop"+tellie)
+         knop1[tellie] = cp.addButton("Knoop"+tellie)
             .setPosition(350 + i * 50, 500 + j * 50)
             .setSize(50,50)
             .setCaptionLabel("Rondje");

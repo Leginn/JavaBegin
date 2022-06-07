@@ -1,6 +1,7 @@
 import controlP5.*;
 
 int[] Vakjes = {0, 0, 0, 0, 0, 0, 0, 0, 0};
+int beurt = 1;
 ControlP5 cp;
 
 Button knop18;
@@ -83,144 +84,130 @@ background(255,255,255);
 }
 
 void mouseClicked(){
-  // Left clicking voor het kruisje
-  
+
   if(mouseX > 150 && mouseY < 250 && mouseX < 250 && mouseY > 150){
-    if(Vakjes[0] == 0){
+    if(Vakjes[0] == 0 && beurt == 1){
       line(150,150,250,250);
       line(150,250,250,150);
+      beurt = 2;
       Vakjes[0] = 1;
+      
+     }else if(Vakjes[0] == 0 && beurt == 2){
+      circle(200, 200, 75);
+      beurt = 1;
+      Vakjes[0] = 2;
      }
   } 
   
-  if(mouseButton == LEFT && mouseX > 250 && mouseY < 250 && mouseX < 350 && mouseY > 150){
-    if(Vakjes[1] == 0){
+  if(mouseX > 250 && mouseY < 250 && mouseX < 350 && mouseY > 150){
+    if(Vakjes[1] == 0 && beurt == 1){
       line(250,150,350,250);
       line(250,250,350,150);
+      beurt = 2;
       Vakjes[1] = 1;
-    }
-  } 
-  
-  if(mouseButton == LEFT && mouseX > 350 && mouseY < 250 && mouseX < 450 && mouseY > 150){
-    if(Vakjes[2] == 0){
-      line(350,150,450,250);
-      line(350,250,450,150);  
-      Vakjes[2] = 1;
-    }
-  } 
-  
-  if(mouseButton == LEFT && mouseX > 150 && mouseY < 350 && mouseX < 250 && mouseY > 250){
-    if(Vakjes[3] == 0){
-      line(150,250,250,350);
-      line(150,350,250,250);
-      Vakjes[3] = 1;
-    } 
-  } 
-  
-  if(mouseButton == LEFT && mouseX > 250 && mouseY < 350 && mouseX < 350 && mouseY > 250){
-    if(Vakjes[4] == 0){
-      line(250,250,350,350);
-      line(250,350,350,250);  
-      Vakjes[4] = 1;
-    } 
-  } 
-  
-  if(mouseButton == LEFT && mouseX > 350 && mouseY < 350 && mouseX < 450 && mouseY > 250){
-    if(Vakjes[5] == 0){
-      line(350,250,450,350);
-      line(350,350,450,250);
-      Vakjes[5] = 1;
-    }
-  } 
-  
-  if(mouseButton == LEFT && mouseX > 150 && mouseY < 450 && mouseX < 250 && mouseY > 350){
-    if(Vakjes[6] == 0){ 
-      line(150,350,250,450);
-      line(150,450,250,350);
-      Vakjes[6] = 1;
-    } 
-  } 
-  
-  if(mouseButton == LEFT && mouseX > 250 && mouseY < 450 && mouseX < 350 && mouseY > 350){
-    if(Vakjes[7] == 0){
-      line(250,350,350,450);
-      line(250,450,350,350);
-      Vakjes[7] = 1;
-    }
-  } 
-  
-  if(mouseButton == LEFT && mouseX > 350 && mouseY < 450 && mouseX < 450 && mouseY > 350){
-    if(Vakjes[8] == 0){
-      line(350,350,450,450);
-      line(350,450,450,350);
-      Vakjes[8] = 1;
-    }
-  } 
-  
-  
-  // Right clicking voor de circle
-  
-  if(mouseButton == RIGHT && mouseX > 150 && mouseY < 250 && mouseX < 250 && mouseY > 150){
-    if(Vakjes[0] == 0){
-      circle(200, 200, 75);
-      Vakjes[0] = 2;
-    }
-  } 
-  
-  if(mouseButton == RIGHT && mouseX > 250 && mouseY < 250 && mouseX < 350 && mouseY > 150){
-    if(Vakjes[1] == 0){
-      circle(300, 200, 75);
+      
+    }else if(Vakjes[1] == 0 && beurt == 2){
+      circle(300, 200, 75); 
+      beurt = 1;
       Vakjes[1] = 2;
     }
   } 
   
-  if(mouseButton == RIGHT && mouseX > 350 && mouseY < 250 && mouseX < 450 && mouseY > 150){
-    if(Vakjes[2] == 0){
+  if(mouseX > 350 && mouseY < 250 && mouseX < 450 && mouseY > 150){
+    if(Vakjes[2] == 0 && beurt == 1){
+      line(350,150,450,250);
+      line(350,250,450,150);  
+      beurt = 2;
+      Vakjes[2] = 1;
+      
+    }else if(Vakjes[2] == 0 && beurt == 2){
       circle(400, 200, 75);
+      beurt = 1;
       Vakjes[2] = 2;
-    } 
+    }
   } 
   
-  if(mouseButton == RIGHT && mouseX > 150 && mouseY < 350 && mouseX < 250 && mouseY > 250){
-    if(Vakjes[3] == 0){  
-      circle(200, 300, 75);
+  if(mouseX > 150 && mouseY < 350 && mouseX < 250 && mouseY > 250){
+    if(Vakjes[3] == 0 && beurt == 1){
+      line(150,250,250,350);
+      line(150,350,250,250);
+      beurt = 2;
+      Vakjes[3] = 1;
+      
+    }else if(Vakjes[3] == 0 && beurt == 2){
+      circle(200, 300, 75); 
+      beurt = 1;
       Vakjes[3] = 2;
     }
   } 
   
-  if(mouseButton == RIGHT && mouseX > 250 && mouseY < 350 && mouseX < 350 && mouseY > 250){
-    if(Vakjes[4] == 0){
-      circle(300, 300, 75);
+  if(mouseX > 250 && mouseY < 350 && mouseX < 350 && mouseY > 250){
+    if(Vakjes[4] == 0 && beurt == 1){
+      line(250,250,350,350);
+      line(250,350,350,250);  
+      beurt = 2;
+      Vakjes[4] = 1;
+      
+    }else if(Vakjes[4] == 0 && beurt == 2){
+      circle(300, 300, 75); 
+      beurt = 1;
       Vakjes[4] = 2;
-    } 
+    }
   } 
   
-  if(mouseButton == RIGHT && mouseX > 350 && mouseY < 350 && mouseX < 450 && mouseY > 250){
-    if(Vakjes[5] == 0){
+  if(mouseX > 350 && mouseY < 350 && mouseX < 450 && mouseY > 250){
+    if(Vakjes[5] == 0 && beurt == 1){
+      line(350,250,450,350);
+      line(350,350,450,250);
+      beurt = 2;
+      Vakjes[5] = 1;
+      
+    }else if(Vakjes[5] == 0 && beurt == 2){
       circle(400, 300, 75);
+      beurt = 1;
       Vakjes[5] = 2;
     }
   } 
   
-  if(mouseButton == RIGHT && mouseX > 150 && mouseY < 450 && mouseX < 250 && mouseY > 350){
-    if(Vakjes[6] == 0){
+  if(mouseX > 150 && mouseY < 450 && mouseX < 250 && mouseY > 350){
+    if(Vakjes[6] == 0 && beurt == 1){ 
+      line(150,350,250,450);
+      line(150,450,250,350);
+      beurt = 2;
+      Vakjes[6] = 1;
+      
+    }else if(Vakjes[6] == 0 && beurt == 2){
       circle(200, 400, 75);
+      beurt = 1;
       Vakjes[6] = 2;
     }
   } 
   
-  if(mouseButton == RIGHT && mouseX > 250 && mouseY < 450 && mouseX < 350 && mouseY > 350){
-    if(Vakjes[7] == 0){
+  if(mouseX > 250 && mouseY < 450 && mouseX < 350 && mouseY > 350){
+    if(Vakjes[7] == 0 && beurt == 1){
+      line(250,350,350,450);
+      line(250,450,350,350);
+      beurt = 2;
+      Vakjes[7] = 1;
+      
+    }else if(Vakjes[7] == 0 && beurt == 2){
       circle(300, 400, 75);
+      beurt = 1;
       Vakjes[7] = 2;
     }
   } 
   
-  if(mouseButton == RIGHT && mouseX > 350 && mouseY < 450 && mouseX < 450 && mouseY > 350){
-    if(Vakjes[8] == 0){
+  if(mouseX > 350 && mouseY < 450 && mouseX < 450 && mouseY > 350){
+    if(Vakjes[8] == 0 && beurt == 1){
+      line(350,350,450,450);
+      line(350,450,450,350);
+      beurt = 2;
+      Vakjes[8] = 1;
+      
+    }else if(Vakjes[8] == 0 && beurt == 1){
       circle(400, 400, 75);
+      beurt = 1;
       Vakjes[8] = 2;
     }
-  } 
-  
+  }    
 }
